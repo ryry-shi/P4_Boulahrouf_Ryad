@@ -1,0 +1,232 @@
+{
+    "players": {
+        "1": {
+            "birthdate": "1990-11-30",
+            "first_name": "Magnus",
+            "gender": "M",
+            "id": 1,
+            "last_name": "Carlsen",
+            "rank": 2855
+        },
+        "2": {
+            "birthdate": "1992-07-30",
+            "first_name": "Fabiano",
+            "gender": "M",
+            "id": 2,
+            "last_name": "Caruana",
+            "rank": 2800
+        },
+        "3": {
+            "birthdate": "1992-10-24",
+            "first_name": "Ding",
+            "gender": "M",
+            "id": 3,
+            "last_name": "Liren",
+            "rank": 2799
+        },
+        "4": {
+            "birthdate": "1990-07-14",
+            "first_name": "Ian",
+            "gender": "M",
+            "id": 4,
+            "last_name": "Nepomniachtchi",
+            "rank": 2792
+        },
+        "5": {
+            "birthdate": "1982-10-06",
+            "first_name": "Levon",
+            "gender": "M",
+            "id": 5,
+            "last_name": "Aronian",
+            "rank": 2782
+        },
+        "6": {
+            "birthdate": "1985-04-12",
+            "first_name": "Shakhriyar",
+            "gender": "M",
+            "id": 6,
+            "last_name": "Mamedyarov",
+            "rank": 2762
+        },
+        "7": {
+            "birthdate": "1983-10-31",
+            "first_name": "Alexander",
+            "gender": "M",
+            "id": 7,
+            "last_name": "Grischuk",
+            "rank": 2775
+        },
+        "8": {
+            "birthdate": "1994-06-28",
+            "first_name": "Anish",
+            "gender": "M",
+            "id": 8,
+            "last_name": "Giri",
+            "rank": 2777
+        }
+    },
+    "tournaments": {
+        "1": {
+            "description": "aaaaa",
+            "id": 1,
+            "location": "aaaaaaaaa",
+            "name": "azer",
+            "nb_turns": 4,
+            "players": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ],
+            "start_date": "0011-11-11T00:00:00",
+            "time_control": "Bullet",
+            "turns": [
+                {
+                    "matchs": [
+                        {
+                            "player_1_id": 6,
+                            "player_2_id": 4,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 7,
+                            "player_2_id": 3,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 8,
+                            "player_2_id": 2,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 5,
+                            "player_2_id": 1,
+                            "score_1": 1.0
+                        }
+                    ],
+                    "name": "Turn 1"
+                },
+                {
+                    "matchs": [
+                        {
+                            "player_1_id": 1,
+                            "player_2_id": 2,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 3,
+                            "player_2_id": 4,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 5,
+                            "player_2_id": 6,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 7,
+                            "player_2_id": 8,
+                            "score_1": 1.0
+                        }
+                    ],
+                    "name": "Turn 2"
+                },
+                {
+                    "matchs": [
+                        {
+                            "player_1_id": 2,
+                            "player_2_id": 4,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 6,
+                            "player_2_id": 8,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 1,
+                            "player_2_id": 3,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 5,
+                            "player_2_id": 7,
+                            "score_1": 1.0
+                        }
+                    ],
+                    "name": "Turn 3"
+                },
+                {
+                    "matchs": [
+                        {
+                            "player_1_id": 4,
+                            "player_2_id": 8,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 2,
+                            "player_2_id": 3,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 6,
+                            "player_2_id": 7,
+                            "score_1": 1.0
+                        }
+                    ],
+                    "name": "Turn 4"
+                }
+            ]
+        },
+        "2": {
+            "description": "azer",
+            "id": 2,
+            "location": "azer",
+            "name": "azer",
+            "nb_turns": 4,
+            "players": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ],
+            "start_date": "1992-12-12T00:00:00",
+            "time_control": "Bullet",
+            "turns": [
+                {
+                    "matchs": [
+                        {
+                            "player_1_id": 6,
+                            "player_2_id": 4,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 7,
+                            "player_2_id": 3,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 8,
+                            "player_2_id": 2,
+                            "score_1": 1.0
+                        },
+                        {
+                            "player_1_id": 5,
+                            "player_2_id": 1,
+                            "score_1": 1.0
+                        }
+                    ],
+                    "name": "Turn 1"
+                }
+            ]
+        }
+    }
+}
