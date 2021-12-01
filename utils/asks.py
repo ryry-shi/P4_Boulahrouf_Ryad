@@ -16,7 +16,7 @@ def select_identifiant():
 
     print("Sélection d'indentifiant")
     return {
-       "id": ask_integer("identifiant ?", 1, 8)
+       "id": ask_integer("identifiant ?", 1, 200)
     }
 
 
