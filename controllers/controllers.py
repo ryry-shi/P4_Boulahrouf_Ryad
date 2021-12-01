@@ -1,8 +1,4 @@
 from datetime import date
-from typing import List
-from models.match import Match
-from models.turn import Turn
-from utils.asks import resultat
 from models.player import player_manager as pm
 from models.tournament import tournament_manager as tm
 from views.main_menu import MainMenu
@@ -11,17 +7,17 @@ from views.players_menu import PlayersMenu
 from utils.matchmaking import (
     gen_turn
 )
-from views.forms import (
+from utils.asks import (
+    edit_rank,
     select_identifiant
 )
 from views.lists import (
-    rang_by_name, rang_by_rank
+    liste_tournaments, rang_by_name, rang_by_rank
 )
 from views.form import(
     CreatePlayerForm,
     CreateTournamentForm
 )
-
 
 class Controller:
     def players(self):
@@ -32,17 +28,20 @@ class Controller:
             if choice == 1:
                 self.create_player()
             if choice == 2:
-                data = select_identifiant()
-                player = pm.find_by_id(data["id"])
-                edit = int(input(""))
-                player.rank = edit
-                pm.insert_item(player.id)
+                self.edit_rank()
             if choice == 3:
                 rang_by_name(liste_players)
             if choice == 4:
                 rang_by_rank(liste_players)
             if choice == 5:
                 break
+    
+    def edit_rank(self):
+        data = select_identifiant()
+        player = pm.find_by_id(data["id"])
+        edit = edit_rank()
+        player.rank = edit["rank"]
+        pm.insert_item(player.id)
 
     def create_player(self):
         data = CreatePlayerForm().show()
@@ -58,6 +57,7 @@ class Controller:
 
 
     def create_tournament(self):
+        # Création du tournois
         data = CreateTournamentForm().show()
         data["players"] = []
         data["turns"] = []
@@ -81,6 +81,10 @@ class Controller:
         del data["numbers_players"]
         tournament = tm.create(**data)
         tm.insert_item(tournament.id)
+    
+    def list_tournaments(self):
+        tournament = tm.find_all()
+        liste_tournaments(tournament)
 
     def tournament(self):
         while True:
@@ -91,8 +95,7 @@ class Controller:
             if choice == 2:
                 self.play_tournament()
             if choice == 3:
-                data = select_identifiant()
-                tm.insert_item(data["id"])
+                self.list_tournaments()
             if choice == 4:
                 break
 
@@ -116,7 +119,6 @@ class Controller:
                 
                 # on génère un tour qui contient des matchs à jouer
                 turn = gen_turn(turn_nb, tournament)
-                print(turn.name)
 
                 # parcours les matchs à jouer
                 for match in turn.matchs:
@@ -124,6 +126,7 @@ class Controller:
                     #on récupère les participants
                     p1 = pm.find_by_id(match.player_1_id)
                     p2 = pm.find_by_id(match.player_2_id)
+
 
                     # on demande à l'organisation d'entrer le score du joueur1
                     while True:

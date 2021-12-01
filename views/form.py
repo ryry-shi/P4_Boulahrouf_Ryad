@@ -1,8 +1,5 @@
-from os import name
 from typing import Any, List, Tuple
-from models.match import Match
-from models.tournament import TimeControl, Tournament
-from models.turn import Turn
+from models.tournament import TimeControl
 from views.view import View
 
 
@@ -51,6 +48,7 @@ class Form(View):
 class CreateTournamentForm(Form):
 
     def __init__(self):
+        # Formulaire de tournois 
         super().__init__(title="Créer un tournois",fields=[
         ("name", " Prénom", Text),
         ("location", " Lieu", Text),
@@ -67,6 +65,7 @@ class CreateTournamentForm(Form):
 class CreatePlayerForm(Form):
 
     def __init__(self):
+        # Formulaire de player
         super().__init__(title="Créer un player", fields=[
         ("first_name", " Prénom", Text),
         ("last_name", " Nom du joueur", Text),

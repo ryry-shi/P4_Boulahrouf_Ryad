@@ -32,7 +32,7 @@ class Player:
     @first_name.setter
     def first_name(self, value: str):
         if 2 < len(value) < 16:
-            self.__first_name = value
+            self.__first_name = value.title()
         else:
             raise ValueError("Erreur le prénom est trop grand ou trop petit")
 
@@ -43,7 +43,7 @@ class Player:
     @last_name.setter
     def last_name(self, value: str):
         if 2 < len(value) < 16:
-            self.__last_name = value
+            self.__last_name = value.title()
         else:
             raise ValueError("Erreur le prénom est trop grand ou trop petit")
 
@@ -99,7 +99,7 @@ class Player:
         return f"{self.last_name} {self.first_name}"
 
     def __str__(self) -> str:
-        return f"{self.last_name} {self.first_name}"
+        return f"{self.last_name} {self.first_name} {self.rank}"
 
 
 player_manager = Manager(item_type=Player)

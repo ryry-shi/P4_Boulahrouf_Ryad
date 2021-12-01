@@ -1,4 +1,4 @@
-from models.player import Player, player_manager as pm
+from models.player import player_manager as pm
 
 
 class Match:
@@ -40,14 +40,8 @@ class Match:
             return f"(1) {pm.find_by_id(self.player_1_id)} vs (2) {pm.find_by_id(self.player_2_id)}"
 
         def __eq__(self, obj) -> bool:
-            if self.player_1_id in self:
-                del Match(player_1_id,player_2_id)
-
             return min(obj.player_1_id, obj.player_2_id) == min(self.player_1_id, self.player_2_id) and\
                  max(obj.player_1_id, obj.player_2_id) == max(self.player_1_id, self.player_2_id)
-
-        def __del__(self,obj):
-            del Match(player_1_id,player_2_id)
 
         def serialize(self):
             return {

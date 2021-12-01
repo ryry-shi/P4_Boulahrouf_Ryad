@@ -74,8 +74,8 @@ class Tournament:
 
     @turns.setter
     def turns(self, value: List):
-        if value == None:
-            self.__turns = []
+        if value == []:
+            self.__turns = value
         self.__turns = [Turn(**turn) for turn in value]
 
     @property

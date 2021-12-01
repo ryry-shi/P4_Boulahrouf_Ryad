@@ -1,7 +1,3 @@
-import random
-from datetime import date
-from typing import List
-
 from models.match import Match
 from models.tournament import Tournament
 from models.turn import Turn
@@ -45,15 +41,9 @@ def gen_turn(turn_nb: int, tournament: Tournament):
                 for m in tournament.matchs:
                     print(m)
                     print(match)
-                    del m["player_1_id"]
-                    del m["player_2_id"]
                     if m == match:
-                        del m.player_1_id
-                        del m.player_2_id
                         break
-                    elif m.player_1_id == match :
-                        del m.player_1_id
-                        del m.player_2_id
+                else:
                     # ajout du match au tournoi
                     turn.matchs.append(match)
 

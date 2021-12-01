@@ -16,7 +16,7 @@ class Turn:
 
         @matchs.setter
         def matchs(self, value):
-            self.__matchs = value
+            self.__matchs = [Match(**match) if not isinstance(match, Match) else match for match in value]
                    
         @property
         def name(self):
