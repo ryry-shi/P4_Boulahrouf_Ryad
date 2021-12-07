@@ -11,6 +11,7 @@ def ask_integer(name: str, min_value: int, max_value: int):
         except ValueError:
             pass
 
+
 def select_identifiant():
     """ Fonction pour sélectioner un tournois arréter """
 

@@ -4,7 +4,7 @@ from views.menu import Menu
 class PlayersMenu(Menu):
     """ Classe PlayersMenu qui hérite de la classe Menu
     Un string et une liste de tuple qui en fais un sous-Menu"""
-    
+
     def __init__(self):
         super().__init__("Gérer les joueurs", [
             ("Déclarer un nouveau joueur", 1),

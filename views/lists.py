@@ -20,6 +20,7 @@ def rang_by_name(players):
         blocking=True
     ).show()
 
+
 def liste_tournaments(tournaments):
     """Fonction qui permet de lister les tournois"""
     View(

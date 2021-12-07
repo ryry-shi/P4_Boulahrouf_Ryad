@@ -27,7 +27,7 @@ def gen_turn(turn_nb: int, tournament: Tournament):
 
         # tant qu'il reste des joueurs qui n'ont pas joué
         while players:
-        
+
             # on retire et garde un premier joueur
             p1 = players.pop(0)
 

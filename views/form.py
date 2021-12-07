@@ -19,6 +19,7 @@ class PositiveInt(int):
             raise ValueError()
         return int.__new__(cls, value)
 
+
 class Gender(str):
 
     def __new__(cls, value):
@@ -26,6 +27,7 @@ class Gender(str):
         if value not in ["H", "F"]:
             raise ValueError()
         return str.__new__(cls, value)
+
 
 class Form(View):
 
@@ -45,33 +47,35 @@ class Form(View):
                     pass
         return data
 
+
 class CreateTournamentForm(Form):
 
     def __init__(self):
-        # Formulaire de tournois 
-        super().__init__(title="Créer un tournois",fields=[
-        ("name", " Prénom", Text),
-        ("location", " Lieu", Text),
-        ("start_date_year", " Année de début du tournoi", PositiveInt),
-        ("start_date_month", "Mois de début du tournoi", PositiveInt),
-        ("start_date_day", " Jour de début du tournoi", PositiveInt),
-        ("time_control", " Controle du temps", TimeControl),
-        ("description", " Description", Text),
-        ("nb_turns", "Nombre de tours", PositiveInt),
-        ("numbers_players", " Nombre de joueurs", PositiveInt),
-        ("id", "Identifiant", PositiveInt)
-    ])
+        # Formulaire de tournois
+        super().__init__(title="Créer un tournois", fields=[
+            ("name", " Prénom", Text),
+            ("location", " Lieu", Text),
+            ("start_date_year", " Année de début du tournoi", PositiveInt),
+            ("start_date_month", "Mois de début du tournoi", PositiveInt),
+            ("start_date_day", " Jour de début du tournoi", PositiveInt),
+            ("time_control", " Controle du temps", TimeControl),
+            ("description", " Description", Text),
+            ("nb_turns", "Nombre de tours", PositiveInt),
+            ("numbers_players", " Nombre de joueurs", PositiveInt),
+            ("id", "Identifiant", PositiveInt)
+        ])
+
 
 class CreatePlayerForm(Form):
 
     def __init__(self):
         # Formulaire de player
         super().__init__(title="Créer un player", fields=[
-        ("first_name", " Prénom", Text),
-        ("last_name", " Nom du joueur", Text),
-        ("birthdate_year", " Année de naissance", PositiveInt),
-        ("birthdate_month", "Mois de naissance", PositiveInt),
-        ("birthdate_day", " Jour de naissance", PositiveInt),   
-        ("gender", " Sexe", Gender),
-        ("rank", " Rang du joueur", int)
-    ])
+            ("first_name", " Prénom", Text),
+            ("last_name", " Nom du joueur", Text),
+            ("birthdate_year", " Année de naissance", PositiveInt),
+            ("birthdate_month", "Mois de naissance", PositiveInt),
+            ("birthdate_day", " Jour de naissance", PositiveInt),
+            ("gender", " Sexe", Gender),
+            ("rank", " Rang du joueur", int)
+        ])

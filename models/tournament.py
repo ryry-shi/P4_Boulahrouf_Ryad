@@ -20,7 +20,7 @@ class Tournament:
         id: int,
         name: str,
         location: str,
-        start_date : datetime,
+        start_date: datetime,
         time_control: TimeControl,
         description: str,
         nb_turns: int = 4,
@@ -108,7 +108,6 @@ class Tournament:
     def time_control(self) -> TimeControl:
         return self.__time_control
 
-
     @time_control.setter
     def time_control(self, value: TimeControl):
         try:
@@ -163,5 +162,6 @@ class Tournament:
             for m in t.matchs:
                 result.append(m)
         return result
+
 
 tournament_manager = Manager(item_type=Tournament)

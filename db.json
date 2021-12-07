@@ -97,9 +97,9 @@
             "name": "azer",
             "nb_turns": 4,
             "players": [
+                1,
                 2,
                 3,
-                1,
                 4,
                 5,
                 6,

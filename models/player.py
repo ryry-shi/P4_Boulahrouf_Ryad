@@ -54,7 +54,7 @@ class Player:
     @birthdate.setter
     def birthdate(self, value: str):
         self.__birthdate = date.fromisoformat(str(value))
-        
+
     @property
     def gender(self) -> str:
         return self.__gender

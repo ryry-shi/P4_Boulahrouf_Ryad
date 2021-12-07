@@ -12,12 +12,15 @@ from utils.asks import (
     select_identifiant
 )
 from views.lists import (
-    liste_tournaments, rang_by_name, rang_by_rank
+    liste_tournaments,
+    rang_by_name,
+    rang_by_rank
 )
-from views.form import(
+from views.form import (
     CreatePlayerForm,
     CreateTournamentForm
 )
+
 
 class Controller:
     def players(self):
@@ -35,7 +38,7 @@ class Controller:
                 rang_by_rank(liste_players)
             if choice == 5:
                 break
-    
+
     def edit_rank(self):
         data = select_identifiant()
         player = pm.find_by_id(data["id"])
@@ -54,7 +57,6 @@ class Controller:
         del data["birthdate_day"]
         player = pm.create(**data)
         pm.insert_item(player.id)
-
 
     def create_tournament(self):
         # Création du tournois
@@ -81,7 +83,7 @@ class Controller:
         del data["numbers_players"]
         tournament = tm.create(**data)
         tm.insert_item(tournament.id)
-    
+
     def list_tournaments(self):
         tournament = tm.find_all()
         liste_tournaments(tournament)
@@ -116,17 +118,15 @@ class Controller:
         else:
             # reprendre le tournoi là où il en était
             for turn_nb in range(len(tournament.turns) + 1, tournament.nb_turns + 1):
-                
                 # on génère un tour qui contient des matchs à jouer
                 turn = gen_turn(turn_nb, tournament)
 
                 # parcours les matchs à jouer
                 for match in turn.matchs:
 
-                    #on récupère les participants
+                    # on récupère les participants
                     p1 = pm.find_by_id(match.player_1_id)
                     p2 = pm.find_by_id(match.player_2_id)
-
 
                     # on demande à l'organisation d'entrer le score du joueur1
                     while True:
@@ -147,7 +147,6 @@ class Controller:
 
                 # sauvegarde du tournoi à chaque tour
                 tm.insert_item(tournament.id)
-
 
     def main(self):
         while True:
