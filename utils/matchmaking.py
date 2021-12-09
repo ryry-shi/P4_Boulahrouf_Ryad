@@ -8,7 +8,7 @@ def gen_turn(turn_nb: int, tournament: Tournament):
     dans une liste"""
 
     # création du tour
-    turn = Turn(matchs=[], name=f"Turn {turn_nb}")
+    turn = Turn(matchs=[], name=f"Turn {turn_nb + 1}")
 
     # récupération des joueurs du tournoi
     players = tournament.players.copy()
@@ -24,23 +24,17 @@ def gen_turn(turn_nb: int, tournament: Tournament):
     else:
         # triage des joueurs par score
         players.sort(key=lambda x: tournament.scores[x.id])
-
         # tant qu'il reste des joueurs qui n'ont pas joué
         while players:
-
             # on retire et garde un premier joueur
             p1 = players.pop(0)
-
             # on parcours les autres joueurs
             for p2 in players:
 
                 # on crée le match hypothétique
                 match = Match(p1.id, p2.id)
-
                 # si le match n'a pas déjà été joué
                 for m in tournament.matchs:
-                    print(m)
-                    print(match)
                     if m == match:
                         break
                 else:

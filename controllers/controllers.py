@@ -1,13 +1,16 @@
 from datetime import date
 from models.player import player_manager as pm
 from models.tournament import tournament_manager as tm
+from views.leader_board import LeaderBoard
 from views.main_menu import MainMenu
+from views.repport import Repport
 from views.tournaments_menu import TournamentsMenu
 from views.players_menu import PlayersMenu
 from utils.matchmaking import (
     gen_turn
 )
 from utils.asks import (
+    ask_integer,
     edit_rank,
     select_identifiant
 )
@@ -88,17 +91,32 @@ class Controller:
         tournament = tm.find_all()
         liste_tournaments(tournament)
 
-    def tournament(self):
+    def repport_duel(self):
+        # tournament = tm.find_by_id(ask_integer("name",1,8))
+        tournament = tm.find_by_id(ask_integer("identifiant", 1, 8))
+        Repport(tournament=tournament).show()
+
+    def repport_victory(self):
+        tournament = tm.find_by_id(ask_integer("identifiant", 1, 5))
+        LeaderBoard(tournament=tournament).show()
+
+    def tournaments(self):
         while True:
             choice = TournamentsMenu().show()
             if choice == 1:
-                tournament = self.create_tournament()
-                print(tournament)
+                self.create_tournament()
             if choice == 2:
                 self.play_tournament()
             if choice == 3:
                 self.list_tournaments()
+            if choice == 5:
+                self.repport_duel()
+                input("break")
             if choice == 4:
+                input("break")
+                self.repport_victory()
+                input("break")
+            if choice == 6:
                 break
 
     def play_tournament(self):
@@ -117,7 +135,7 @@ class Controller:
         # sinon jouer le tournoi
         else:
             # reprendre le tournoi là où il en était
-            for turn_nb in range(len(tournament.turns) + 1, tournament.nb_turns + 1):
+            for turn_nb in range(len(tournament.turns), tournament.nb_turns):
                 # on génère un tour qui contient des matchs à jouer
                 turn = gen_turn(turn_nb, tournament)
 
@@ -141,7 +159,6 @@ class Controller:
                     # mise à jour du tableau des scores
                     tournament.scores[p1.id] += match.score_1
                     tournament.scores[p2.id] += match.score_2
-
                 # insertion du tour dans le tournoi
                 tournament.turns.append(turn)
 
@@ -154,6 +171,6 @@ class Controller:
             if choice == 1:
                 self.players()
             elif choice == 2:
-                self.tournament()
+                self.tournaments()
             elif choice == 3:
                 break

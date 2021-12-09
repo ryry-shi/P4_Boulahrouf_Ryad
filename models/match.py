@@ -38,6 +38,9 @@ class Match:
     def __repr__(self) -> int:
         return f"(1) {pm.find_by_id(self.player_1_id)} vs (2) {pm.find_by_id(self.player_2_id)}"
 
+    def __str__(self) -> int:
+        return f"(1) {pm.find_by_id(self.player_1_id)} vs (2) {pm.find_by_id(self.player_2_id)}"
+
     def __eq__(self, obj) -> bool:
         return min(obj.player_1_id, obj.player_2_id) == min(self.player_1_id, self.player_2_id) and\
                 max(obj.player_1_id, obj.player_2_id) == max(self.player_1_id, self.player_2_id)
