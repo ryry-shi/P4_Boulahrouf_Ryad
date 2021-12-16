@@ -10,5 +10,7 @@ class TournamentsMenu(Menu):
             ("Créer un tournois", 1),
             ("Reprendre un tournois", 2),
             ("Sauvegarde du tournois", 3),
-            ("Retour", 4),
+            ("Rapport duel", 4),
+            ("Rapport de victoire", 5),
+            ("Retour", 6)
         ])

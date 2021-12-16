@@ -93,12 +93,13 @@ class Controller:
 
     def repport_duel(self):
         # tournament = tm.find_by_id(ask_integer("name",1,8))
-        tournament = tm.find_by_id(ask_integer("identifiant", 1, 8))
+        tournament = tm.find_by_id(ask_integer("identifiant",1, 8))
         Repport(tournament=tournament).show()
 
     def repport_victory(self):
-        tournament = tm.find_by_id(ask_integer("identifiant", 1, 5))
+        tournament = tm.find_by_id(ask_integer("identifiant", 1, 8))
         LeaderBoard(tournament=tournament).show()
+        input()
 
     def tournaments(self):
         while True:
@@ -109,13 +110,10 @@ class Controller:
                 self.play_tournament()
             if choice == 3:
                 self.list_tournaments()
-            if choice == 5:
-                self.repport_duel()
-                input("break")
             if choice == 4:
-                input("break")
+                self.repport_duel()
+            if choice == 5:
                 self.repport_victory()
-                input("break")
             if choice == 6:
                 break
 
