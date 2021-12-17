@@ -15,5 +15,4 @@ class LeaderBoard(View):
                     content += "Match nul \n"
                 else:
                     content += "le joueur 2 a gagner \n"
-        input("break")
         super().__init__(title="rapport", content=content)

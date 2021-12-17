@@ -9,7 +9,7 @@ class TournamentsMenu(Menu):
         super().__init__("Menu tournois", [
             ("Créer un tournois", 1),
             ("Reprendre un tournois", 2),
-            ("Sauvegarde du tournois", 3),
+            ("Liste des tournois", 3),
             ("Rapport duel", 4),
             ("Rapport de victoire", 5),
             ("Retour", 6)

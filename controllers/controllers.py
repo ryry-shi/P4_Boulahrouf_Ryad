@@ -92,9 +92,9 @@ class Controller:
         liste_tournaments(tournament)
 
     def repport_duel(self):
-        # tournament = tm.find_by_id(ask_integer("name",1,8))
-        tournament = tm.find_by_id(ask_integer("identifiant",1, 8))
+        tournament = tm.find_by_id(ask_integer("identifiant", 1, 8))
         Repport(tournament=tournament).show()
+        input()
 
     def repport_victory(self):
         tournament = tm.find_by_id(ask_integer("identifiant", 1, 8))

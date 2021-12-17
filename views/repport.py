@@ -10,5 +10,4 @@ class Repport(View):
             content += str(turn) + "\n"
             for match in turn.matchs:
                 content += str(match) + "\n"
-        input("break")
         super().__init__(title="rapport", content=content)
