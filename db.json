@@ -9,19 +9,11 @@
             "rank": 8
         },
         "10": {
-            "birthdate": "1999-12-12",
-            "first_name": "Azer",
-            "gender": "F",
-            "id": 10,
-            "last_name": "Azer",
-            "rank": 1
-        },
-        "11": {
             "birthdate": "0001-01-01",
-            "first_name": "Azer",
+            "first_name": "Aaaaa",
             "gender": "H",
-            "id": 11,
-            "last_name": "Azer",
+            "id": 10,
+            "last_name": "Aaaa",
             "rank": 1
         },
         "2": {
@@ -81,11 +73,11 @@
             "rank": 2777
         },
         "9": {
-            "birthdate": "1992-12-12",
-            "first_name": "Azer",
+            "birthdate": "0001-01-01",
+            "first_name": "Aaaa",
             "gender": "H",
             "id": 9,
-            "last_name": "Rffh",
+            "last_name": "Aaaaa",
             "rank": 1
         }
     },
@@ -108,108 +100,7 @@
             ],
             "start_date": "0001-01-01T00:00:00",
             "time_control": "Bullet",
-            "turns": [
-                {
-                    "matchs": [
-                        {
-                            "player_1_id": 1,
-                            "player_2_id": 2,
-                            "score_1": 1.0
-                        },
-                        {
-                            "player_1_id": 3,
-                            "player_2_id": 4,
-                            "score_1": 1.0
-                        },
-                        {
-                            "player_1_id": 5,
-                            "player_2_id": 6,
-                            "score_1": 1.0
-                        },
-                        {
-                            "player_1_id": 7,
-                            "player_2_id": 8,
-                            "score_1": 1.0
-                        }
-                    ],
-                    "name": "Turn 1"
-                },
-                {
-                    "matchs": [
-                        {
-                            "player_1_id": 2,
-                            "player_2_id": 8,
-                            "score_1": 1.0
-                        },
-                        {
-                            "player_1_id": 1,
-                            "player_2_id": 5,
-                            "score_1": 1.0
-                        },
-                        {
-                            "player_1_id": 6,
-                            "player_2_id": 4,
-                            "score_1": 1.0
-                        },
-                        {
-                            "player_1_id": 7,
-                            "player_2_id": 3,
-                            "score_1": 1.0
-                        }
-                    ],
-                    "name": "Turn 2"
-                },
-                {
-                    "matchs": [
-                        {
-                            "player_1_id": 4,
-                            "player_2_id": 8,
-                            "score_1": 1.0
-                        },
-                        {
-                            "player_1_id": 2,
-                            "player_2_id": 3,
-                            "score_1": 1.0
-                        },
-                        {
-                            "player_1_id": 5,
-                            "player_2_id": 7,
-                            "score_1": 1.0
-                        },
-                        {
-                            "player_1_id": 6,
-                            "player_2_id": 1,
-                            "score_1": 1.0
-                        }
-                    ],
-                    "name": "Turn 3"
-                },
-                {
-                    "matchs": [
-                        {
-                            "player_1_id": 1,
-                            "player_2_id": 3,
-                            "score_1": 1.0
-                        },
-                        {
-                            "player_1_id": 2,
-                            "player_2_id": 4,
-                            "score_1": 1.0
-                        },
-                        {
-                            "player_1_id": 5,
-                            "player_2_id": 8,
-                            "score_1": 1.0
-                        },
-                        {
-                            "player_1_id": 6,
-                            "player_2_id": 7,
-                            "score_1": 1.0
-                        }
-                    ],
-                    "name": "Turn 4"
-                }
-            ]
+            "turns": []
         }
     }
 }

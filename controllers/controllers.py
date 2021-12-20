@@ -50,6 +50,7 @@ class Controller:
         pm.insert_item(player.id)
 
     def create_player(self):
+        # Création du Joueur
         data = CreatePlayerForm().show()
         data["birthdate"] = date(
             year=data["birthdate_year"],
@@ -59,6 +60,7 @@ class Controller:
         del data["birthdate_month"]
         del data["birthdate_day"]
         player = pm.create(**data)
+        # Sauvegarde du player
         pm.insert_item(player.id)
 
     def create_tournament(self):
@@ -85,6 +87,7 @@ class Controller:
                     pass
         del data["numbers_players"]
         tournament = tm.create(**data)
+        # Sauvegarde du tournois
         tm.insert_item(tournament.id)
 
     def list_tournaments(self):

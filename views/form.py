@@ -5,9 +5,12 @@ from views.view import View
 
 class Text(str):
 
-    def __new__(cls, value, max_len=255, min_len=1):
-        if not isinstance(value, str) or len(value) > max_len or len(value) < min_len:
-            raise ValueError()
+    def __new__(cls, value, max_len=255, min_len=2):
+        for p in value:
+            if not isinstance(value, str) or len(value) > max_len or len(value) < min_len:
+                raise ValueError()
+            if isinstance(p, int):
+                raise ValueError()
         return str.__new__(cls, value)
 
 
