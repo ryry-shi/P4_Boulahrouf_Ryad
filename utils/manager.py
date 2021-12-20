@@ -48,5 +48,4 @@ class Manager:
 
     def insert_item(self, id):
         item = self.find_by_id(id)
-        print(item.serialize())
         self.table.upsert(Document(item.serialize(), doc_id=id))
